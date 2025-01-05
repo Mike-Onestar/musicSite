@@ -76,6 +76,37 @@ html, body {
   }
 }
 
+/* duplicated social buttons */
+.social-btn {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Live dot for Twitch status */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #dc3545;
+  border-radius: 50%;
+  display: none;
+}
+
+/* duplicated featurette */
+.featurette {
+  background: rgba(255, 255, 255, 0.523);
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 3rem;
+}
+
 /* Content container base styles */
 .content-container {
   width: 100%;
