@@ -10,25 +10,81 @@ html, body {
   min-height: 100vh;
   width: 100%;
   position: relative;
-}
-
-.bg-image {
-  min-height: 100vh;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
+  overflow-x: hidden;
 }
 
 .paper-bg {
+  min-height: 100vh;
+  width: 100%;
   background-image: url('../images/paperbackground.png');
   background-repeat: repeat;
 }
 
 .scaffold-bg {
+  min-height: 100vh;
+  width: 100%;
   background-image: url('../images/scaffoldcanvas3.png');
   background-repeat: no-repeat;
-  background-position: center 60px;
+  background-position: top center;
+  margin: 0 auto;
 }
+
+/* Mobile-first approach */
+@media (max-width: 767px) {
+  .scaffold-bg {
+    background-size: cover;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .content-container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .container.marketing {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .scaffold-bg {
+    background-size: 150% auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .scaffold-bg {
+    background-size: 100% auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .scaffold-bg {
+    background-size: 90% auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .scaffold-bg {
+    background-size: 1400px auto;
+    max-width: 1400px;
+  }
+}
+
+/* Content container base styles */
+.content-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
 
 .btn.btn-social {
     border: 0;
