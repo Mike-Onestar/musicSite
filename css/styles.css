@@ -1,3 +1,35 @@
+/* Base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background styles */
+.background-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.bg-image {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.paper-bg {
+  background-image: url('../images/paperbackground.png');
+  background-repeat: repeat;
+}
+
+.scaffold-bg {
+  background-image: url('../images/scaffoldcanvas3.png');
+  background-repeat: no-repeat;
+  background-position: center 60px;
+}
+
 .btn.btn-social {
     border: 0;
      position: relative;
@@ -104,3 +136,4 @@
    .open .dropdown-toggle.btn-dropbox {
      background-image: none;
    }
+

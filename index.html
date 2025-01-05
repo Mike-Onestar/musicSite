@@ -11,178 +11,205 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
     />
+    <!-- Add the link to your styles.css -->
+    <link rel="stylesheet" href="css/styles.css">
   </head>
 
   <body>
-    <!-- background -->
-    <div
-      class="bg-image"
-      style="background-image: url('images/paperbackground.png'); height: 100%"
-    >
-      <div
-        class="bg-image"
-        style="
-          background-image: url('images/scaffoldcanvas3.png');
-          background-repeat: no-repeat;
-          background-position: center;
-          height: 100%;
-        "
-      >
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-sm bg-body-tertiary">
-          <div class="container-fluid">
-            <!--brand name-->
-            <a class="navbar-brand" href="#"
-              ><img
-                src="./images/slojeEmote.webp"
-                alt="brand icon"
-                height="45"
-              />
-              Sloje</a
-            >
+    <!-- Background -->
+    <div class="background-wrapper">
+      <div class="bg-image paper-bg">
+        <div class="bg-image scaffold-bg">
+        
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-sm bg-body-tertiary">
+            <div class="container-fluid">
+              <!-- Brand name -->
+              <a class="navbar-brand" 
+                href="#">
+                <img src="./images/slojeEmote.webp"
+                    alt="brand icon"
+                    height="45" />
+                Sloje
+              </a>
 
-            <!--hamburger-->
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+              <!-- Hamburger -->
+              <button class="navbar-toggler"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-            <!-- options -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    href="./index.html"
-                    >Bio</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./futureProjects.html"
-                    >Future Projects</a
-                  >
-                </li>
-              </ul>
+              <!-- Navigation Options -->
+              <div class="collapse navbar-collapse" 
+                  id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active"
+                      aria-current="page"
+                      href="./index.html">
+                      Bio
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" 
+                      href="./contact.html">
+                      Contact
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" 
+                      href="./futureProjects.html">
+                      Future Projects
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav> <!-- End navbar -->
 
-        <!-- socials -->
-        <div class="container">
-          <a class="btn btn-primary" href="#" role="button">Link</a>
-          <button class="btn btn-primary" type="submit">Button</button>
-          <input class="btn btn-primary" type="button" value="Input" />
-          <input class="btn btn-primary" type="submit" value="Submit" />
-          <input class="btn btn-primary" type="reset" value="Reset" />
-        </div>
+          <!-- Socials with live status -->
+          <div class="container my-4">
+            <div class="d-flex justify-content-center flex-wrap gap-3 align-items-center">
+              <!-- Twitch Live Status -->
+              <div class="me-3">
+                <button class="btn btn-outline-danger rounded-pill d-flex align-items-center"
+                        disabled>
+                  <span class="d-flex align-items-center">
+                    <span class="me-2"
+                          style="width: 8px;
+                                height: 8px;
+                                background-color: #dc3545;
+                                border-radius: 50%;
+                                display: none;">
+                    </span>
+                    Offline
+                  </span>
+                </button>
+              </div>
 
-        <div class="container marketing">
-          <!-- START FEATURETTES -->
+              <!-- Social Buttons -->
+              <a href="#"
+                class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px"
+                role="button">
+                <img src="/api/placeholder/30/30"
+                    alt="Social 1"
+                    width="30"
+                    height="30" />
+              </a>
 
-          <div
-            class="row featurette mt-5"
-            style="
-              background: rgba(255, 255, 255, 0.523);
-              border-radius: 20px;
-              padding: 10px;
-            "
-          >
-            <div class="col-md-7">
-              <h1 class="featurette-heading fw-normal lh-1">First Look</h1>
-              <p class="lead">
-                <b>Here's whats next coming from the slodj factory</b>
-              </p>
+              <a href="#"
+                class="btn btn-info rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px"
+                role="button">
+                <img src="/api/placeholder/30/30"
+                    alt="Social 2"
+                    width="30"
+                    height="30" />
+              </a>
+
+              <a href="#"
+                class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px"
+                role="button">
+                <img src="/api/placeholder/30/30"
+                    alt="Social 3"
+                    width="30"
+                    height="30" />
+              </a>
+
+              <a href="#"
+                class="btn btn-success rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px"
+                role="button">
+                <img src="/api/placeholder/30/30"
+                    alt="Social 4"
+                    width="30"
+                    height="30" />
+              </a>
+
+              <a href="#"
+                class="btn btn-warning rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px"
+                role="button">
+                <img src="/api/placeholder/30/30"
+                    alt="Social 5"
+                    width="30"
+                    height="30" />
+              </a>
+            </div>
+          </div> <!-- END Socials with live status -->
+
+          <!-- Featurettes -->
+          <div class="container marketing">
+            <div class="row featurette mt-5"
+                style="background: rgba(255, 255, 255, 0.523);
+                        border-radius: 20px;
+                        padding: 10px;">
+              <div class="col-md-7">
+                <h1 class="featurette-heading fw-normal lh-1">First Look</h1>
+                <p class="lead mb-md-0">
+                  <b>Here's whats next coming from the slodj factory</b>
+                </p>
+              </div>
+
+              <div class="col-md-5">
+                <div class="d-flex justify-content-center">
+                  <iframe style="border-radius: 12px"
+                        src="https://open.spotify.com/embed/track/1j4XZ4Tq5NIlhw29wxy4vs?utm_source=generator"
+                        width="100%"
+                        height="352"
+                        frameborder="0"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                  </iframe>
+                </div>
+              </div>
             </div>
 
-            <div class="col-md-5">
-              <iframe
-                style="border-radius: 12px"
-                src="https://open.spotify.com/embed/track/1j4XZ4Tq5NIlhw29wxy4vs?utm_source=generator"
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe>
+            <hr class="featurette-divider mt-5" />
+
+            <div class="row featurette mt-5"
+                style="background: rgba(255, 255, 255, 0.523);
+                        border-radius: 20px;
+                        padding: 10px;">
+              <div class="col-md-7 order-md-2">
+                <h1 class="featurette-heading fw-normal lh-1">
+                  Oh yeah, it's that good.
+                </h1>
+                <p class="lead mb-md-0">
+                  <b>Another featurette? Of course. More placeholder content here
+                    to give you an idea of how this layout would work with some
+                    actual real-world content in place.</b>
+                </p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <div class="d-flex justify-content-center">
+                  <iframe style="border: 0; max-width: 100%; height: 470px"
+                          src="https://bandcamp.com/EmbeddedPlayer/album=2607899670/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                          seamless>
+                    <a href="https://sloje.bandcamp.com/album/jealous">
+                      jealous by sloje
+                    </a>
+                  </iframe>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <hr class="featurette-divider mt-5" />
-
-          <div
-            class="row featurette mt-5"
-            style="
-              background: rgba(255, 255, 255, 0.523);
-              border-radius: 20px;
-              padding: 10px;
-            "
-          >
-            <div class="col-md-7 order-md-2">
-              <h1 class="featurette-heading fw-normal lh-1">
-                Oh yeah, it's that good.
-              </h1>
-              <p class="lead">
-                <b
-                  >Another featurette? Of course. More placeholder content here
-                  to give you an idea of how this layout would work with some
-                  actual real-world content in place.</b
-                >
-              </p>
-            </div>
-            <div class="col-md-5 order-md-1">
-              <iframe
-                style="border: 0; width: 350px; height: 470px"
-                src="https://bandcamp.com/EmbeddedPlayer/album=2607899670/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-                seamless
-              >
-                <a href="https://sloje.bandcamp.com/album/jealous"
-                  >jealous by sloje</a
-                >
-              </iframe>
-            </div>
-          </div>
-
-          <hr class="featurette-divider mt-5" />
-
-          <div class="row featurette mt-5">
-            <div class="col-md-7">
-              <h2 class="featurette-heading fw-normal lh-1">
-                And lastly, this one.
-                <span class="text-body-secondary">Checkmate.</span>
-              </h2>
-              <p class="lead">
-                And yes, this is the last block of representative placeholder
-                content. Again, not really intended to be actually read, simply
-                here to give you a better view of what this would look like with
-                some actual content. Your content.
-              </p>
-            </div>
-            <div class="col-md-5"></div>
-          </div>
-
-          <hr class="featurette-divider mt-5" />
-
-          <!-- /END FEATURETTES -->
+          </div><!-- End of Featurettes -->
         </div>
       </div>
-
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"
-      ></script>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous">
+    </script>
+    <script src="slojeSite/config.js"></script>
   </body>
 </html>
