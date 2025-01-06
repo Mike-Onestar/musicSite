@@ -45,30 +45,26 @@
 
         <!-- Social Links -->
         <div class="container my-4">
-          <div class="d-flex justify-content-center flex-wrap gap-3 align-items-center">
-            <!-- Twitch Status -->
-            <div class="me-3">
-              <button class="btn btn-outline-danger rounded-pill d-flex align-items-center" disabled>
-                <span class="d-flex align-items-center">
-                  <span class="live-dot me-2"></span>
-                  Offline
-                </span>
-              </button>
+          <div class="social-container">
+            <div class="d-flex gap-3 align-items-center">
+              <!-- Twitch Status -->
+              <div>
+                <button class="btn btn-outline-danger rounded-pill d-flex align-items-center" disabled>
+                  <span class="d-flex align-items-center">
+                    <span class="live-dot me-2"></span>
+                    Offline
+                  </span>
+                </button>
+              </div>
+        
+              <!-- Social Buttons -->
+              <a href="#" class="social-btn">
+                <img src="images/twitter.png" alt="Twitter">
+              </a>
+              <a href="#" class="social-btn">
+                <img src="images/instagram.png" alt="Instagram">
+              </a>
             </div>
-
-            <!-- Social Buttons -->
-            <a href="#" class="btn btn-primary rounded-circle social-btn">
-              <img src="/api/placeholder/30/30" alt="Social 1">
-            </a>
-            <a href="#" class="btn btn-info rounded-circle social-btn">
-              <img src="/api/placeholder/30/30" alt="Social 2">
-            </a>
-            <a href="#" class="btn btn-danger rounded-circle social-btn">
-              <img src="/api/placeholder/30/30" alt="Social 3">
-            </a>
-            <a href="#" class="btn btn-success rounded-circle social-btn">
-              <img src="/api/placeholder/30/30" alt="Social 4">
-            </a>
           </div>
         </div> <!-- end social links -->
 
@@ -77,18 +73,27 @@
           <!-- First Featurette -->
           <div class="row featurette">
             <div class="col-md-7">
-              <h1 class="featurette-heading fw-normal lh-1">First Look</h1>
+              <h1 class="featurette-heading fw-normal lh-1">Latest release from the Sloje Factory</h1>
               <p class="lead mb-md-0">
-                <b>Here's whats next coming from the slodj factory</b>
+                <b></b>
               </p>
             </div>
             <div class="col-md-5">
               <div class="d-flex justify-content-center">
-                <iframe style="border-radius: 12px"
-                        src="https://open.spotify.com/embed/track/1j4XZ4Tq5NIlhw29wxy4vs?utm_source=generator"
-                        width="100%" height="352" frameborder="0" allowfullscreen
+                <iframe class="spotify-embed"
+                        style="border-radius: 12px"
+                        width="100%" 
+                        height="352" 
+                        frameborder="0" 
+                        allowfullscreen
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
                 </iframe>
+                <!-- Loading state for when the track is being fetched -->
+                <div id="spotify-loading" class="text-center d-none">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -99,8 +104,16 @@
           <div class="row featurette">
             <div class="col-md-7 order-md-2">
               <h1 class="featurette-heading fw-normal lh-1">Oh yeah, it's that good.</h1>
+              <!-- attributions -->
+              <a href="https://www.flaticon.com/free-icons/brands-and-logotypes" 
+                 title="brands and logotypes icons">Brands and logotypes icons created by Freepik - Flaticon
+              </a>
+              <br>
+              <a href="https://www.flaticon.com/free-icons/instagram-logo" 
+                 title="instagram logo icons">Instagram logo icons created by Laisa Islam Ani - Flaticon
+              </a>
               <p class="lead mb-md-0">
-                <b>Another featurette? Of course. More placeholder content here.</b>
+                <b>Icons made by Freepik from www.flaticon.com</b>
               </p>
             </div>
             <div class="col-md-5 order-md-1">
@@ -118,7 +131,13 @@
     </div>
     </div>
 
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="slojeSite/config.js"></script>
+    <!-- custom scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/spotify-integration.js"></script>
+    
   </body>
 </html>
