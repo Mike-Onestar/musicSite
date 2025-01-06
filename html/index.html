@@ -48,14 +48,15 @@
           <div class="social-container">
             <div class="d-flex gap-3 align-items-center">
               <!-- Twitch Status -->
-              <div>
-                <button class="btn btn-outline-danger rounded-pill d-flex align-items-center" disabled>
-                  <span class="d-flex align-items-center">
-                    <span class="live-dot me-2"></span>
-                    Offline
-                  </span>
-                </button>
-              </div>
+              <button class="btn btn-purple rounded-pill d-flex align-items-center gap-2 px-4 py-2">
+                <svg class="twitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"/>
+                </svg>
+                <span class="d-flex align-items-center">
+                  <span class="live-dot me-2"></span>
+                  <span class="status-text">Offline</span>
+                </span>
+              </button>
         
               <!-- Social Buttons -->
               <a href="#" class="social-btn">
@@ -112,6 +113,8 @@
               <a href="https://www.flaticon.com/free-icons/instagram-logo" 
                  title="instagram logo icons">Instagram logo icons created by Laisa Islam Ani - Flaticon
               </a>
+              <br>
+              <a href="https://lucide.dev">Lucide Icons</a> - ISC License
               <p class="lead mb-md-0">
                 <b>Icons made by Freepik from www.flaticon.com</b>
               </p>
@@ -138,6 +141,7 @@
     <!-- custom scripts -->
     <script src="../js/config.js"></script>
     <script src="../js/spotify-integration.js"></script>
+    <script src="../js/twitch-integration.js"></script>
     
   </body>
 </html>
