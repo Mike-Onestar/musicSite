@@ -29,6 +29,22 @@ html, body {
   margin: 0 auto;
 }
 
+/* Navbar styles */
+.navbar {
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    border-radius: 0;
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+}
+
 /* Mobile-first approach */
 @media (max-width: 767px) {
   .scaffold-bg {
