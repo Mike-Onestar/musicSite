@@ -1,0 +1,7 @@
+# React build files
+react-version/build
+react-version/node_modules
+
+# Keep React source files
+!react-version/src
+!react-version/public

@@ -1,301 +1,247 @@
-/* Base styles */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Background styles */
-.background-wrapper {
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  overflow-x: hidden;
-}
-
-.paper-bg {
-  min-height: 100vh;
-  width: 100%;
-  background-image: url('../images/paperbackground.png');
-  background-repeat: repeat;
-}
-
-.scaffold-bg {
-  min-height: 100vh;
-  width: 100%;
-  background-image: url('../images/scaffoldcanvas3.png');
-  background-repeat: no-repeat;
-  background-position: top center;
-  margin: 0 auto;
-}
-
-/* Navbar styles */
-.navbar {
-  border-bottom-left-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-}
-
-@media (max-width: 767px) {
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+   html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ==========================================================================
+     Layout & Container Styles
+     ========================================================================== */
+  .content-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+  }
+  
+  /* Background Layer Styles */
+  .background-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .paper-bg {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/paperbackground.png');
+    background-repeat: repeat;
+  }
+  
+  .scaffold-bg {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/scaffoldcanvas3.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin: 0 auto;
+  }
+  
+  /* ==========================================================================
+     Component Styles
+     ========================================================================== */
+  
+  /* Navigation */
   .navbar {
-    border-radius: 0;
-    margin: 0 -15px;
-    width: calc(100% + 30px);
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
   }
-}
-
-/* Mobile-first approach */
-@media (max-width: 767px) {
-  .scaffold-bg {
-    background-size: cover;
-    max-height: 100vh;
-    overflow-y: auto;
+  
+  /* Footer */
+  .footer {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem 0;
+    margin-top: 2rem;
   }
   
-  .content-container {
+  .footer-content {
+    padding-bottom: 0.5rem;
+  }
+  
+  .attributions {
+    font-size: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--bs-secondary-color);
+  }
+  
+  .attributions a {
+    color: var(--bs-secondary-color);
+    text-decoration: none;
+  }
+  
+  .attributions a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Social Container */
+  .social-container {
+    background: rgba(255, 255, 255, 0.523);
+    border-radius: 20px;
+    padding: 15px;
+    margin: 1rem auto;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Social Buttons */
+  .social-btn {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .social-btn img {
     width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
-    max-height: 100vh;
-    overflow-y: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
   }
   
-  .container.marketing {
-    padding-bottom: 2rem;
+  .social-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+    background: none;
   }
-}
-
-/* Tablet and up */
-@media (min-width: 768px) {
-  .scaffold-bg {
-    background-size: 150% auto;
+  
+  /* Twitch Status Button */
+  .btn-purple {
+    background-color: #6441a5;
+    color: white;
+    min-width: 120px;
   }
-}
-
-@media (min-width: 992px) {
-  .scaffold-bg {
-    background-size: 100% auto;
+  
+  .btn-purple:hover {
+    background-color: #7d5bbe;
+    color: white;
   }
-}
-
-@media (min-width: 1200px) {
-  .scaffold-bg {
-    background-size: 90% auto;
+  
+  .twitch-icon {
+    width: 20px;
+    height: 20px;
   }
-}
-
-@media (min-width: 1400px) {
-  .scaffold-bg {
-    background-size: 1400px auto;
-    max-width: 1400px;
+  
+  .live-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #e91916;
+    border-radius: 50%;
+    display: none;
+    margin-top: 2px;
+    animation: pulse 2s infinite;
   }
-}
-
-
-.social-container {
-  background: rgba(255, 255, 255, 0.523);
-  border-radius: 20px;
-  padding: 15px;
-  margin: 1rem auto;
-  display: inline-block;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* social button styles */
-.social-btn {
-  width: 60px;
-  height: 60px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-}
-
-.social-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.social-btn:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
-  background: none;
-}
-
-/* Live dot for Twitch status */
-.btn-purple {
-  background-color: #6441a5;
-  color: white;
-  min-width: 120px;
-}
-
-.btn-purple:hover {
-  background-color: #7d5bbe;
-  color: white;
-}
-
-.twitch-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.live-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #e91916;
-  border-radius: 50%;
-  display: none;
-  margin-top: 2px;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(233, 25, 22, 0.7);
+  
+  /* Content Sections */
+  .featurette {
+    background: rgba(255, 255, 255, 0.523);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 3rem;
   }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(233, 25, 22, 0);
+  
+  /* ==========================================================================
+     Animations
+     ========================================================================== */
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(233, 25, 22, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px rgba(233, 25, 22, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(233, 25, 22, 0);
+    }
   }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(233, 25, 22, 0);
+  
+  /* ==========================================================================
+     Media Queries
+     ========================================================================== */
+     
+  /* Mobile (up to 767px) */
+  @media (max-width: 767px) {
+    .navbar {
+      border-radius: 0;
+      margin: 0 -15px;
+      width: calc(100% + 30px);
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+    }
+  
+    .footer {
+      margin: 0 -15px;
+      width: calc(100% + 30px);
+    }
+  
+    .scaffold-bg {
+      background-size: cover;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .content-container {
+      width: 100%;
+      padding: 0 15px;
+      margin: 0 auto;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .container.marketing {
+      padding-bottom: 2rem;
+    }
   }
-}
-
-
-/* duplicated featurette */
-.featurette {
-  background: rgba(255, 255, 255, 0.523);
-  border-radius: 20px;
-  padding: 10px;
-  margin-top: 3rem;
-}
-
-/* Content container base styles */
-.content-container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-
-.btn.btn-social {
-    border: 0;
-     position: relative;
-     padding-left: 44px;
-     text-align: left;
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-       margin: 5px;
-   }
-   .btn.btn-social :first-child {
-     position: absolute;
-     left: 0;
-     top: 0;
-     bottom: 0;
-     width: 32px;
-     line-height: 43px;
-     font-size: 1.6em;
-     text-align: center;
-     border-right: 1px solid rgba(0,0,0,0.2);
-   }
-   
-   .btn.btn-social-icon {
-     position: relative;
-     padding-left: 44px;
-     text-align: left;
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     height: 34px;
-     width: 34px;
-     padding-left: 0;
-     padding-right: 0;
-     margin-bottom: 4px;
-   }
-   .btn.btn-social-icon :first-child {
-     position: absolute;
-     left: 0;
-     top: 0;
-     bottom: 0;
-     width: 32px;
-     line-height: 34px;
-     font-size: 1.6em;
-     text-align: center;
-     border-right: 1px solid rgba(0,0,0,0.2);
-     border: none;
-     text-align: center;
-     width: 100% !important;
-   }
-   
-   .btn.btn-bitbucket {
-     color: #fff;
-     background-color: #205081;
-     border-color: rgba(0,0,0,0.2);
-   }
-   .btn-bitbucket:hover,
-   .btn-bitbucket:focus,
-   .btn-bitbucket:active,
-   .btn-bitbucket.active,
-   .open .dropdown-toggle.btn-bitbucket {
-     color: #fff;
-     background-color: #183c60;
-     border-color: rgba(0,0,0,0.2);
-   }
-   .btn-bitbucket:active,
-   .btn-bitbucket.active,
-   .open .dropdown-toggle.btn-bitbucket {
-     background-image: none;
-   }
-   .btn-bitbucket.disabled,
-   .btn-bitbucket[disabled],
-   fieldset[disabled] .btn-bitbucket,
-   .btn-bitbucket.disabled:hover,
-   .btn-bitbucket[disabled]:hover,
-   fieldset[disabled] .btn-bitbucket:hover,
-   .btn-bitbucket.disabled:focus,
-   .btn-bitbucket[disabled]:focus,
-   fieldset[disabled] .btn-bitbucket:focus,
-   .btn-bitbucket.disabled:active,
-   .btn-bitbucket[disabled]:active,
-   fieldset[disabled] .btn-bitbucket:active,
-   .btn-bitbucket.disabled.active,
-   .btn-bitbucket[disabled].active,
-   fieldset[disabled] .btn-bitbucket.active {
-     background-color: #205081;
-     border-color: rgba(0,0,0,0.2);
-   }
-   .btn-dropbox {
-     color: #fff;
-     background-color: #1087dd;
-     border-color: rgba(0,0,0,0.2);
-   }
-   .btn-dropbox:hover,
-   .btn-dropbox:focus,
-   .btn-dropbox:active,
-   .btn-dropbox.active,
-   .open .dropdown-toggle.btn-dropbox {
-     color: #fff;
-     background-color: #0d70b7;
-     border-color: rgba(0,0,0,0.2);
-   }
-   .btn-dropbox:active,
-   .btn-dropbox.active,
-   .open .dropdown-toggle.btn-dropbox {
-     background-image: none;
-   }
-
+  
+  /* Tablet and up */
+  @media (min-width: 768px) {
+    .scaffold-bg {
+      background-size: 150% auto;
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 992px) {
+    .scaffold-bg {
+      background-size: 100% auto;
+    }
+  }
+  
+  /* Large Desktop */
+  @media (min-width: 1200px) {
+    .scaffold-bg {
+      background-size: 90% auto;
+    }
+  }
+  
+  /* Extra Large Desktop */
+  @media (min-width: 1400px) {
+    .scaffold-bg {
+      background-size: 1400px auto;
+      max-width: 1400px;
+    }
+  }
