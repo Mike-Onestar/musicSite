@@ -5,160 +5,209 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sloje</title>
     <link rel="icon" href="favicon.ico?v=2" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
   <body>
     <!-- background divs -->
     <div class="background-wrapper">
-    <div class="paper-bg">
-    <div class="scaffold-bg">
-      <!-- container -->
-      <div class="content-container">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-sm bg-body-tertiary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="../images/slojeEmote.webp" alt="brand icon" height="45">
-              Sloje
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                    data-bs-target="#navbarSupportedContent">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" href="./music.html">Music</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./contact.html">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+      <div class="paper-bg">
+        <div class="scaffold-bg">
+          <!-- container -->
+          <div class="content-container">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-sm bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="../images/slojeEmote.webp"
+                    alt="brand icon"
+                    height="45" />
+                  Sloje
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="./music.html">Music</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
 
-        <!-- Social Links -->
-        <div class="container my-4">
-          <div class="social-container">
-            <div class="d-flex gap-3 align-items-center">
-              <!-- Twitch Status -->
-              <button class="btn btn-purple rounded-pill d-flex align-items-center gap-2 px-4 py-2">
-                <svg class="twitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"/>
-                </svg>
-                <span class="d-flex align-items-center">
-                  <span class="live-dot me-2"></span>
-                  <span class="status-text">Offline</span>
-                </span>
-              </button>
-        
-              <!-- Social Buttons -->
-              <a href="#" class="social-btn">
-                <img src="../images/twitter.png" alt="Twitter">
-              </a>
-              <a href="#" class="social-btn">
-                <img src="../images/instagram.png" alt="Instagram">
-              </a>
-            </div>
-          </div>
-        </div> <!-- end social links -->
+            <!-- Social Links -->
+            <div class="container my-4">
+              <div class="social-container">
+                <div class="d-flex gap-3 align-items-center">
+                  <!-- Twitch Status -->
+                  <button
+                    class="btn btn-purple rounded-pill d-flex align-items-center gap-2 px-4 py-2">
+                    <svg
+                      class="twitch-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2">
+                      <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
+                    </svg>
+                    <span class="d-flex align-items-center">
+                      <span class="live-dot me-2"></span>
+                      <span class="status-text">Offline</span>
+                    </span>
+                  </button>
 
-        <!-- Content -->
-        <div class="container marketing">
-          <!-- First Featurette -->
-          <div class="row featurette">
-            <div class="col-md-7">
-              <h1 class="featurette-heading fw-normal lh-1">Latest release from the Sloje Factory</h1>
-              <p class="lead mb-md-0">
-                <b></b>
-              </p>
+                  <!-- Social Buttons -->
+                  <a href="#" class="social-btn">
+                    <img src="../images/twitter.png" alt="Twitter" />
+                  </a>
+                  <a href="#" class="social-btn">
+                    <img src="../images/instagram.png" alt="Instagram" />
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="col-md-5">
-              <div class="d-flex justify-content-center">
-                <iframe class="spotify-embed"
-                        style="border-radius: 12px"
-                        width="100%" 
-                        height="352" 
-                        frameborder="0" 
-                        allowfullscreen
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-                </iframe>
-                <!-- Loading state for when the track is being fetched -->
-                <div id="spotify-loading" class="text-center d-none">
-                  <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
+            <!-- end social links -->
+
+            <!-- Content -->
+            <div class="container marketing">
+              <!-- First Featurette -->
+              <div class="row featurette">
+                <div class="col-md-7">
+                  <h1 class="featurette-heading fw-normal lh-1">
+                    Latest release from the Sloje Factory
+                  </h1>
+                  <p class="lead mb-md-0">
+                    <b></b>
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <div class="d-flex justify-content-center">
+                    <iframe
+                      class="spotify-embed"
+                      style="border-radius: 12px"
+                      width="100%"
+                      height="352"
+                      frameborder="0"
+                      allowfullscreen
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                    </iframe>
+                    <!-- Loading state for when the track is being fetched -->
+                    <div id="spotify-loading" class="text-center d-none">
+                      <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="featurette-divider mt-5" />
+
+              <!-- Second Featurette -->
+              <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h1 class="featurette-heading fw-normal lh-1">
+                    Oh yeah, it's that good.
+                  </h1>
+                  <!-- attributions -->
+                  <a
+                    href="https://www.flaticon.com/free-icons/brands-and-logotypes"
+                    title="brands and logotypes icons"
+                    >Brands and logotypes icons created by Freepik - Flaticon
+                  </a>
+                  <br />
+                  <a
+                    href="https://www.flaticon.com/free-icons/instagram-logo"
+                    title="instagram logo icons"
+                    >Instagram logo icons created by Laisa Islam Ani - Flaticon
+                  </a>
+                  <br />
+                  <a href="https://lucide.dev">Lucide Icons</a> - ISC License
+                  <p class="lead mb-md-0">
+                    <b>Icons made by Freepik from www.flaticon.com</b>
+                  </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <div class="d-flex justify-content-center">
+                    <iframe
+                      src="https://bandcamp.com/EmbeddedPlayer/album=2607899670/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                      style="border: 0; max-width: 100%; height: 470px"
+                      seamless>
+                      <a href="https://sloje.bandcamp.com/album/jealous"
+                        >jealous by sloje</a
+                      >
+                    </iframe>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+            <!-- end content -->
 
-          <hr class="featurette-divider mt-5">
-
-          <!-- Second Featurette -->
-          <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-              <h1 class="featurette-heading fw-normal lh-1">Oh yeah, it's that good.</h1>
-              <!-- attributions -->
-              <a href="https://www.flaticon.com/free-icons/brands-and-logotypes" 
-                 title="brands and logotypes icons">Brands and logotypes icons created by Freepik - Flaticon
-              </a>
-              <br>
-              <a href="https://www.flaticon.com/free-icons/instagram-logo" 
-                 title="instagram logo icons">Instagram logo icons created by Laisa Islam Ani - Flaticon
-              </a>
-              <br>
-              <a href="https://lucide.dev">Lucide Icons</a> - ISC License
-              <p class="lead mb-md-0">
-                <b>Icons made by Freepik from www.flaticon.com</b>
-              </p>
-            </div>
-            <div class="col-md-5 order-md-1">
-              <div class="d-flex justify-content-center">
-                <iframe src="https://bandcamp.com/EmbeddedPlayer/album=2607899670/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-                        style="border: 0; max-width: 100%; height: 470px" seamless>
-                  <a href="https://sloje.bandcamp.com/album/jealous">jealous by sloje</a>
-                </iframe>
-              </div>
-            </div>
-          </div>
-        </div> <!-- end content -->
-
-        <footer class="footer bg-body-tertiary">
-          <div class="container">
-            <div class="footer-content">
-              <div class="row gy-2">
-                <div class="col-md-6">
-                  <h5 class="mb-1">About Sloje</h5>
-                  <p class="text-body-secondary mb-0">Creating music and content The Great ROTMG Days</p>
+            <footer class="footer bg-body-tertiary">
+              <div class="container">
+                <div class="footer-content">
+                  <div class="row gy-2">
+                    <div class="col-md-6">
+                      <h5 class="mb-1">About Sloje</h5>
+                      <p class="text-body-secondary mb-0">
+                        Creating music and content The Great ROTMG Days
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <h5 class="mb-1">Connect</h5>
+                      <div class="d-flex gap-2">
+                        <a href="#" class="text-body-secondary">Twitter</a>
+                        <span class="text-body-secondary">•</span>
+                        <a href="#" class="text-body-secondary">Instagram</a>
+                        <span class="text-body-secondary">•</span>
+                        <a href="#" class="text-body-secondary">Twitch</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <h5 class="mb-1">Connect</h5>
-                  <div class="d-flex gap-2">
-                    <a href="#" class="text-body-secondary">Twitter</a>
-                    <span class="text-body-secondary">•</span>
-                    <a href="#" class="text-body-secondary">Instagram</a>
-                    <span class="text-body-secondary">•</span>
-                    <a href="#" class="text-body-secondary">Twitch</a>
+
+                <div class="attributions text-center">
+                  <div>
+                    Icons:
+                    <a
+                      href="https://www.flaticon.com/free-icons/brands-and-logotypes"
+                      title="brands and logotypes icons"
+                      >Brands and logotypes</a
+                    >
+                    by Freepik,
+                    <a
+                      href="https://www.flaticon.com/free-icons/instagram-logo"
+                      title="instagram logo icons"
+                      >Instagram logo</a
+                    >
+                    by Laisa Islam Ani - Flaticon
+                  </div>
+                  <div>
+                    <a href="https://lucide.dev">Lucide Icons</a> - ISC License
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div class="attributions text-center">
-              <div>Icons: <a href="https://www.flaticon.com/free-icons/brands-and-logotypes" title="brands and logotypes icons">Brands and logotypes</a> by Freepik,
-              <a href="https://www.flaticon.com/free-icons/instagram-logo" title="instagram logo icons">Instagram logo</a> by Laisa Islam Ani - Flaticon</div>
-              <div><a href="https://lucide.dev">Lucide Icons</a> - ISC License</div>
-            </div>
+            </footer>
           </div>
-        </footer>
-
-      </div> <!-- end container -->
-    </div> <!-- end background divs-->
-    </div>
+          <!-- end container -->
+        </div>
+        <!-- end background divs-->
+      </div>
     </div>
 
     <!-- jQuery -->
@@ -169,6 +218,5 @@
     <script src="../js/config.js"></script>
     <script src="../js/spotify-integration.js"></script>
     <script src="../js/twitch-integration.js"></script>
-    
   </body>
 </html>
