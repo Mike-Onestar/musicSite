@@ -1,19 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./layouts/Layout";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+import { Layout, Navbar, Home, Music, Contact } from "./exports";
 
 function App() {
   return (
+    // Router wraps everything - it's like the building itself
     <Router>
+      {/* Layout is like the basic structure every room shares */}
       <Layout>
         <Navbar />
+        {/* Routes is like a directory board showing what's where */}
         <Routes>
+          {/* Each Route is like saying "if someone goes to /, show them Home" */}
+          {/* EX: <Route path="/contact" element={<Contact />} /> */}
           <Route path="/" element={<Home />} />
-          {/* We'll add other routes as we create them */}
-          {/* <Route path="/music" element={<Music />} /> */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/music" element={<Music />} /> {/* Add this line */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
     </Router>
