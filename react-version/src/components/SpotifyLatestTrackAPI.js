@@ -6,20 +6,19 @@ const LatestTrackSpotifyAPI = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // These would typically come from environment variables
-  const SPOTIFY_CLIENT_ID = "00c54a9609b24633a6952f9ae73e791a";
-  const SPOTIFY_CLIENT_SECRET = "1dd1013267fa4be6b111b061a1d94246";
-  const SPOTIFY_ARTIST_ID = "6vnoKId12sUVM7qPnvcnP8";
+  const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+  const SPOTIFY_CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
+  const SPOTIFY_ARTIST_ID = process.env.REACT_APP_SPOTIFY_ARTIST_ID;
 
-  // This function gets our access token from Spotify
+  // This function gets  access token from Spotify
   const getSpotifyToken = async () => {
     try {
-      // We're using the client credentials flow here
+      //client credentials flow here
       const response = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          // We encode our client ID and secret in base64 as required by Spotify
+          //encode client ID and secret in base64 as required by Spotify
           Authorization: `Basic ${btoa(
             `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
           )}`,
@@ -42,7 +41,7 @@ const LatestTrackSpotifyAPI = () => {
     const fetchLatestTrack = async () => {
       try {
         setIsLoading(true);
-        // First, get our access token
+        // get access token
         const token = await getSpotifyToken();
 
         // Then use it to fetch the artist's top tracks
@@ -111,9 +110,9 @@ const LatestTrackSpotifyAPI = () => {
     <div className="w-100" style={{ height: "352px" }}>
       {trackId && (
         <iframe
+          title="Spotify Latest Track Player"
           className="w-100 h-100 rounded"
           src={`https://open.spotify.com/embed/track/${trackId}?utm_source=generator`}
-          frameBorder="0"
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
       )}

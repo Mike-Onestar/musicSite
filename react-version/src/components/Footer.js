@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,6 +16,10 @@ const Footer = () => {
             <div className="col-md-6">
               <h5 className="mb-1">Connect</h5>
               <div className="d-flex gap-2">
+                <Link className="text-body-secondary" to="/Contact">
+                  Contact
+                </Link>
+                <span className="text-body-secondary">•</span>
                 <a href="#" className="text-body-secondary">
                   Twitter
                 </a>

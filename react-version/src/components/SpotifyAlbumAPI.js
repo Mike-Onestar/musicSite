@@ -13,9 +13,9 @@ const SpotifyAlbumAPI = ({ albumId }) => {
   return (
     <div className="w-100" style={{ height: "380px" }}>
       <iframe
+        title="Spotify Album Player"
         className="w-100 h-100 rounded"
         src={`https://open.spotify.com/embed/album/${albumId}?utm_source=generator`}
-        frameBorder="0"
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"

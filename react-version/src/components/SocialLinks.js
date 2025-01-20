@@ -2,15 +2,34 @@ import React from "react";
 import useTwitchStatus from "../hooks/useTwitchStatus";
 
 const SocialLinks = () => {
-  // Use our custom hook to get Twitch status
-  const { isLive, error } = useTwitchStatus();
+  const { isLive, error, isLoading } = useTwitchStatus();
+
+  // Helper function to determine what text to show in the Twitch button
+  const getTwitchStatusText = () => {
+    if (isLoading) return "Loading...";
+    if (error) return "Unavailable";
+    return isLive ? "Live" : "Offline";
+  };
+
+  // Helper function for button class names
+  const getTwitchButtonClasses = () => {
+    const baseClasses =
+      "btn btn-purple rounded-pill d-flex align-items-center gap-2 px-4 py-2";
+    if (error) return `${baseClasses} opacity-75`;
+    if (isLoading) return `${baseClasses} disabled`;
+    return baseClasses;
+  };
 
   return (
     <div className="container my-4">
       <div className="social-container">
         <div className="d-flex gap-3 align-items-center">
           {/* Twitch Status Button */}
-          <button className="btn btn-purple rounded-pill d-flex align-items-center gap-2 px-4 py-2">
+          <button
+            className={getTwitchButtonClasses()}
+            title={error ? "Could not fetch stream status" : undefined}
+            disabled={isLoading}>
+            {/* Twitch Icon */}
             <svg
               className="twitch-icon"
               viewBox="0 0 24 24"
@@ -19,20 +38,32 @@ const SocialLinks = () => {
               strokeWidth="2">
               <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
             </svg>
+
+            {/* Status Display */}
             <span className="d-flex align-items-center">
-              <span
-                className="live-dot me-2"
-                style={{ display: isLive ? "inline-block" : "none" }}
-              />
-              <span className="status-text">{isLive ? "Live" : "Offline"}</span>
+              {!error && !isLoading && (
+                <span
+                  className="live-dot me-2"
+                  style={{ display: isLive ? "inline-block" : "none" }}
+                />
+              )}
+              <span className="status-text">{getTwitchStatusText()}</span>
             </span>
           </button>
 
-          {/* Social Buttons */}
-          <a href="#" className="social-btn">
+          {/* Social Media Links */}
+          <a
+            href={process.env.REACT_APP_TWITTER_URL || "#"}
+            className="social-btn"
+            target="_blank"
+            rel="noopener noreferrer">
             <img src="/images/twitter.png" alt="Twitter" />
           </a>
-          <a href="#" className="social-btn">
+          <a
+            href={process.env.REACT_APP_INSTAGRAM_URL || "#"}
+            className="social-btn"
+            target="_blank"
+            rel="noopener noreferrer">
             <img src="/images/instagram.png" alt="Instagram" />
           </a>
         </div>
