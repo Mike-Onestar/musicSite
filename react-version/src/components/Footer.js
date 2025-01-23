@@ -20,17 +20,13 @@ const Footer = () => {
                   Contact
                 </Link>
                 <span className="text-body-secondary">•</span>
-                <a href="#" className="text-body-secondary">
-                  Twitter
-                </a>
+                <a href={process.env.REACT_APP_TWITTER_URL || "#"}>Twitter</a>
                 <span className="text-body-secondary">•</span>
-                <a href="#" className="text-body-secondary">
+                <a href={process.env.REACT_APP_INSTAGRAM_URL || "#"}>
                   Instagram
                 </a>
                 <span className="text-body-secondary">•</span>
-                <a href="#" className="text-body-secondary">
-                  Twitch
-                </a>
+                <a href="https://www.twitch.tv/sloje_">Twitch</a>
               </div>
             </div>
           </div>

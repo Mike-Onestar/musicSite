@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const LatestTrackSpotifyAPI = () => {
-  // State for managing our track data and loading/error states
   const [trackId, setTrackId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,15 +9,13 @@ const LatestTrackSpotifyAPI = () => {
   const SPOTIFY_CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
   const SPOTIFY_ARTIST_ID = process.env.REACT_APP_SPOTIFY_ARTIST_ID;
 
-  // This function gets  access token from Spotify
-  const getSpotifyToken = async () => {
+  // Memoized function to get the Spotify token
+  const getSpotifyToken = useCallback(async () => {
     try {
-      //client credentials flow here
       const response = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          //encode client ID and secret in base64 as required by Spotify
           Authorization: `Basic ${btoa(
             `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`
           )}`,
@@ -34,17 +31,17 @@ const LatestTrackSpotifyAPI = () => {
       console.error("Error getting Spotify token:", error);
       throw error;
     }
-  };
+  }, [SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET]);
 
-  // This effect runs when the component mounts
   useEffect(() => {
+    let isSubscribed = true; // Prevent state updates after unmount
+    let intervalId;
+
     const fetchLatestTrack = async () => {
       try {
         setIsLoading(true);
-        // get access token
         const token = await getSpotifyToken();
 
-        // Then use it to fetch the artist's top tracks
         const response = await fetch(
           `https://api.spotify.com/v1/artists/${SPOTIFY_ARTIST_ID}/top-tracks?market=US`,
           {
@@ -56,32 +53,38 @@ const LatestTrackSpotifyAPI = () => {
 
         const data = await response.json();
 
-        // If we got tracks back, use the first one (latest)
-        if (data.tracks && data.tracks.length > 0) {
-          setTrackId(data.tracks[0].id);
-          setError(null);
-        } else {
-          throw new Error("No tracks found");
+        if (isSubscribed) {
+          if (data.tracks && data.tracks.length > 0) {
+            setTrackId(data.tracks[0].id);
+            setError(null);
+          } else {
+            throw new Error("No tracks found");
+          }
         }
       } catch (err) {
-        setError("Failed to load track. Please try again later.");
-        console.error("Error fetching latest track:", err);
+        if (isSubscribed) {
+          setError("Failed to load track. Please try again later.");
+          console.error("Error fetching latest track:", err);
+        }
       } finally {
-        setIsLoading(false);
+        if (isSubscribed) {
+          setIsLoading(false);
+        }
       }
     };
 
-    // Call our function
+    // Initial fetch
     fetchLatestTrack();
 
-    // Set up an interval to refresh the track every hour
-    const interval = setInterval(fetchLatestTrack, 3600000); // 1 hour in milliseconds
+    // Set up periodic refresh every hour
+    intervalId = setInterval(fetchLatestTrack, 3600000); // 1 hour
 
-    // Cleanup function to remove the interval when component unmounts
-    return () => clearInterval(interval);
-  }, []); // Empty dependency array means this runs once when component mounts
+    return () => {
+      isSubscribed = false; // Clean up on unmount
+      clearInterval(intervalId);
+    };
+  }, [getSpotifyToken, SPOTIFY_ARTIST_ID]);
 
-  // Show loading spinner while we fetch the track
   if (isLoading) {
     return (
       <div
@@ -94,7 +97,6 @@ const LatestTrackSpotifyAPI = () => {
     );
   }
 
-  // Show error message if something went wrong
   if (error) {
     return (
       <div
@@ -105,7 +107,6 @@ const LatestTrackSpotifyAPI = () => {
     );
   }
 
-  // Show the Spotify player once we have a track
   return (
     <div className="w-100" style={{ height: "352px" }}>
       {trackId && (
