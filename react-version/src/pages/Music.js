@@ -6,9 +6,6 @@ const Music = () => {
 
   return (
     <>
-      {/* SocialLinks component includes our Twitch status button */}
-      <SocialLinks />
-
       {/* Main content container */}
       <div className="container marketing">
         {/* Spotify Section */}

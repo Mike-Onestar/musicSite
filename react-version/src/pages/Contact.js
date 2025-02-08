@@ -31,8 +31,6 @@ const Contact = () => {
 
   return (
     <>
-      {/* The empty brackets <> </> are called Fragments - they let us return multiple elements */}
-      <SocialLinks />
       {/* Contact Form Section */}
       <div className="container my-5">
         <div className="row justify-content-center">

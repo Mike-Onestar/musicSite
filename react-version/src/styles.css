@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandspan&display=swap");
+
 /* ==========================================================================
    Base Styles
    ========================================================================== */
@@ -6,6 +8,14 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: "Grandspan", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0.67em 0;
 }
 
 /* ==========================================================================
@@ -26,11 +36,46 @@ body {
 }
 
 /* Background Layer Styles */
+
+/* New background video container */
 .background-wrapper {
-  min-height: 100vh;
-  width: 100%;
   position: relative;
-  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Shading*/
+.video-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 2, 2, 0.858); /* Grey tint */
 }
 
 .paper-bg {
@@ -49,22 +94,43 @@ body {
   margin: 0 auto;
 }
 
+.hero-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem; /* Adjust as needed */
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 /* ==========================================================================
      Component Styles
      ========================================================================== */
 
 /* Navigation */
 .navbar {
-  border-bottom-left-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
+  background-color: black !important;
+  font-family: "Grandspan", sans-serif !important;
+}
+
+.navbar .nav-link {
+  color: #ff5e1a !important;
+}
+
+.navbar-brand {
+  color: #ff5e1a !important;
 }
 
 /* Footer */
 .footer {
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
-  padding: 1rem 0;
-  margin-top: 2rem;
+  background-color: black !important;
+  color: #ff5e1a !important;
+  font-family: "Grandspan", sans-serif !important;
 }
 
 .footer-content {
@@ -76,33 +142,33 @@ body {
   padding-top: 0.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--bs-secondary-color);
+  color: #ff5e1a !important;
 }
 
 .attributions a {
   color: var(--bs-secondary-color);
   text-decoration: none;
+  color: #ff5e1a !important;
 }
 
 .attributions a:hover {
   text-decoration: underline;
+  color: darkorange !important;
 }
 
 /* Social Container */
 .social-container {
   background: rgba(255, 255, 255, 0.523);
-  border-radius: 20px;
-  padding: 15px;
   margin: 1rem auto;
   display: inline-block;
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
 }
 
 /* Social Buttons */
 .social-btn {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -186,14 +252,16 @@ body {
 /* Mobile (up to 767px) */
 @media (max-width: 767px) {
   .navbar {
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 0;
     margin: 0 -15px;
     width: calc(100% + 30px);
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
   }
 
   .footer {
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 0 -15px;
     width: calc(100% + 30px);
   }
@@ -215,6 +283,11 @@ body {
   .container.marketing {
     padding-bottom: 2rem;
   }
+
+  .banner-image {
+    /* Adjust the size for smaller screens */
+    object-fit: cover;
+  }
 }
 
 /* Tablet and up */
@@ -222,12 +295,20 @@ body {
   .scaffold-bg {
     background-size: 150% auto;
   }
+
+  .banner-image {
+    width: 100%; /* Ensure it's full width on tablets and up */
+  }
 }
 
 /* Desktop */
 @media (min-width: 992px) {
   .scaffold-bg {
     background-size: 100% auto;
+  }
+
+  .banner-image {
+    /* No specific adjustments needed here if full width works */
   }
 }
 

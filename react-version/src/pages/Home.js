@@ -4,7 +4,6 @@ import { SocialLinks, SpotifyLatestTrackAPI } from "../exports";
 const Home = () => {
   return (
     <>
-      <SocialLinks />
       <div className="container marketing">
         <div className="row featurette">
           <div className="col-md-7">
