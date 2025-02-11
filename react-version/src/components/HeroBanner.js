@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const HeroBanner = () => {
   return (
     <div className="hero-banner">
-      <h1>Welcome to My Site</h1>
+      <img src="/images/hero_banner_looneysloje.jpg" alt="Sloje Emote" />
     </div>
   );
 };

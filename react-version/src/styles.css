@@ -94,20 +94,6 @@ h1 {
   margin: 0 auto;
 }
 
-.hero-banner {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem; /* Adjust as needed */
-}
-
-.banner-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
 /* ==========================================================================
      Component Styles
      ========================================================================== */
@@ -124,6 +110,14 @@ h1 {
 
 .navbar-brand {
   color: #ff5e1a !important;
+}
+
+/* Banner */
+.hero-banner img {
+  max-height: 555px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 30% 60%;
 }
 
 /* Footer */
@@ -221,7 +215,7 @@ h1 {
 
 /* Content Sections */
 .featurette {
-  background: rgba(255, 255, 255, 0.523);
+  color: white;
   border-radius: 20px;
   padding: 10px;
   margin-top: 3rem;
@@ -284,9 +278,7 @@ h1 {
     padding-bottom: 2rem;
   }
 
-  .banner-image {
-    /* Adjust the size for smaller screens */
-    object-fit: cover;
+  .hero-banner {
   }
 }
 
@@ -295,20 +287,12 @@ h1 {
   .scaffold-bg {
     background-size: 150% auto;
   }
-
-  .banner-image {
-    width: 100%; /* Ensure it's full width on tablets and up */
-  }
 }
 
 /* Desktop */
 @media (min-width: 992px) {
   .scaffold-bg {
     background-size: 100% auto;
-  }
-
-  .banner-image {
-    /* No specific adjustments needed here if full width works */
   }
 }
 
