@@ -108,15 +108,14 @@ const LatestTrackSpotifyAPI = () => {
   }
 
   return (
-    <div className="w-100" style={{ height: "352px" }}>
-      {trackId && (
-        <iframe
-          title="Spotify Latest Track Player"
-          className="w-100 h-100 rounded"
-          src={`https://open.spotify.com/embed/track/${trackId}?utm_source=generator`}
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-      )}
+    <div class="spotify-embed-wrapper">
+      <iframe
+        title="Spotify Latest Track Player"
+        src={`https://open.spotify.com/embed/track/${trackId}?utm_source=generator`}
+        width="100%"
+        height="280"
+        frameborder="0"
+        allow="encrypted-media"></iframe>
     </div>
   );
 };

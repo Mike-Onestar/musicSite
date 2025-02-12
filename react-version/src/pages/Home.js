@@ -6,15 +6,11 @@ const Home = () => {
     <>
       <div className="container marketing">
         <div className="row featurette">
-          <div className="col-md-5">
-            <div className="position-relative">
-              <SpotifyLatestTrackAPI />
-            </div>
+          <div className="col-md-4 order-md-2">
+            <h1 className="featurette">SLOJE CORP.</h1>
           </div>
           <div className="col-md-5">
-            <h1 className="featurette">
-              Latest release from the Sloje Factory
-            </h1>
+            <SpotifyLatestTrackAPI />
           </div>
         </div>
       </div>
