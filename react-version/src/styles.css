@@ -79,21 +79,25 @@ h1 {
   background-color: rgba(3, 2, 2, 0.858); /* Grey tint */
 }
 
+/* Commented out - not currently used. If needed, move to inline styles or use imported images
 .paper-bg {
   min-height: 100vh;
   width: 100%;
-  background-image: url("/public/images/paperbackground.png");
+  background-image: url("%PUBLIC_URL%/images/paperbackground.png");
   background-repeat: repeat;
 }
+*/
 
+/* Commented out - not currently used. If needed, move to inline styles or use imported images
 .scaffold-bg {
   min-height: 100vh;
   width: 100%;
-  background-image: url("/public/images/scaffoldcanvas3.png");
+  background-image: url("%PUBLIC_URL%/images/scaffoldcanvas3.png");
   background-repeat: no-repeat;
   background-position: top center;
   margin: 0 auto;
 }
+*/
 
 /* ==========================================================================
      Component Styles

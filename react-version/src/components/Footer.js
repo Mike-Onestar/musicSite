@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="col-md-6">
               <h5 className="mb-1">About Sloje</h5>
               <p className="text-body-secondary mb-0">
-                Creating music and content The Great ROTMG Days
+                Creating music and content since The Great ROTMG Days
               </p>
             </div>
             <div className="col-md-6">

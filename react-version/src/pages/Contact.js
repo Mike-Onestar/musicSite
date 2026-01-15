@@ -15,9 +15,8 @@ const Contact = () => { // Create state variables for each form field
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
-        // TODO: Implement backend submission
-        alert("Thank you for your message! (Form submission not yet implemented)");
+        // TODO: Implement backend submission (Phase 2)
+        alert("Thank you for your message! We'll implement email functionality in Phase 2.");
     };
 
     return (
