@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Grandspan&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 /* ==========================================================================
    Base Styles
@@ -9,13 +8,21 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.02em;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 h1 {
-  font-family: "Grandspan", sans-serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1.2;
+  font-size: 3rem;
   margin: 0.67em 0;
 }
 
@@ -106,15 +113,45 @@ h1 {
 /* Navigation */
 .navbar {
   background-color: black !important;
-  font-family: "Grandspan", sans-serif !important;
+  font-family: "Space Grotesk", sans-serif !important;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 1rem;
 }
 
 .navbar .nav-link {
   color: #ff5e1a !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #fff !important;
 }
 
 .navbar-brand {
   color: #ff5e1a !important;
+  padding-left: 0.5rem !important; /* Stay left */
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  z-index: 1001;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); /* Make hamburger white */
 }
 
 /* Banner */
@@ -129,7 +166,7 @@ h1 {
 .footer {
   background-color: black !important;
   color: #ff5e1a !important;
-  font-family: "Grandspan", sans-serif !important;
+  font-family: "Space Mono", monospace !important;
 }
 
 .footer-content {
@@ -165,23 +202,29 @@ h1 {
 
 /* Social Buttons */
 .social-btn {
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  width: 54px;
+  height: 54px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
   border: none;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.2s ease-in-out;
 }
 
-.social-btn img {
+.social-icon-svg-wrapper {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-svg-wrapper svg {
+  width: 100%;
+  height: 100%;
 }
 
 .social-btn:hover {
@@ -190,47 +233,86 @@ h1 {
   background: none;
 }
 
-/* Twitch Status Button */
-.btn-purple {
-  background-color: #6441a5;
-  color: white;
-  min-width: 120px;
+/* Twitch Interactive Styles */
+.btn-twitch {
+  background: none;
+  border: none;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 54px;
+  height: 54px;
+  transition: transform 0.2s ease;
 }
 
-.btn-purple:hover {
-  background-color: #7d5bbe;
-  color: white;
+.btn-twitch:hover {
+  transform: scale(1.1);
 }
 
-.twitch-icon {
-  width: 20px;
-  height: 20px;
+.twitch-icon-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.live-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #e91916;
+.twitch-icon-wrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.live-flare {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(233, 25, 22, 0.6);
+  box-shadow: 0 0 8px rgba(233, 25, 22, 0.6);
   border-radius: 50%;
-  display: none;
-  margin-top: 2px;
-  animation: pulse 2s infinite;
+  z-index: 1;
+  pointer-events: none;
+  animation: flare-ripple 2s infinite ease-out;
+}
+
+@keyframes flare-ripple {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 180%;
+    height: 180%;
+    opacity: 0;
+  }
 }
 
 /* Content Sections */
 .featurette {
   color: white;
+  background-color: rgba(0, 0, 0, 0.45); /* Balanced dark shading */
+  backdrop-filter: blur(8px); /* Glassmorphism effect for depth */
   border-radius: 20px;
-  padding: 10px;
-  margin-top: 3rem;
+  padding: 2.5rem; /* More breathing room */
+  margin-top: 4rem; /* Increased for breathing room below hero */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle edge definition */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Lift the section slightly */
 }
 
 .featurette h1 {
   /*fonts*/
-  font-family: "pt Mono", monospace;
-  font-weight: bold;
-  font-size: 3rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 800;
+  font-size: 3.5rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .spotify-embed-wrapper {
@@ -249,6 +331,108 @@ h1 {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* ==========================================================================
+     Dashboard & Terminal Styles
+     ========================================================================== */
+
+.contact-terminal-wrapper {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 94, 26, 0.3); /* Soft orange border */
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: "Space Mono", monospace;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.contact-terminal-header {
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+  margin-right: 15px;
+}
+
+.terminal-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.terminal-dots span:nth-child(1) { background-color: #ff5f56; }
+.terminal-dots span:nth-child(2) { background-color: #ffbd2e; }
+.terminal-dots span:nth-child(3) { background-color: #27c93f; }
+
+.terminal-title {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contact-terminal-body {
+  padding: 2.5rem;
+}
+
+.terminal-label {
+  color: #ff5e1a; /* Orange highlight */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.terminal-input {
+  background: rgba(15, 15, 15, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important; /* White text for input for better contrast against orange labels */
+  font-family: "Space Mono", monospace !important;
+  border-radius: 4px !important;
+  padding: 0.75rem !important;
+}
+
+.terminal-input:focus {
+  border-color: #ff5e1a !important;
+  box-shadow: 0 0 10px rgba(255, 94, 26, 0.4) !important;
+  outline: none;
+}
+
+.terminal-input::placeholder {
+  color: #444;
+}
+
+.btn-terminal {
+  background-color: transparent;
+  border: 1px solid #ff5e1a;
+  color: #ff5e1a;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.1em;
+}
+
+.btn-terminal:hover {
+  background-color: #ff5e1a;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 94, 26, 0.5);
+}
+
+.section-divider {
+  border: 0;
+  height: 3px; /* Slightly thicker */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 94, 26, 0.9), rgba(0, 0, 0, 0)); /* More opaque */
+  margin: 2.5rem 0; /* Reduced spacing */
 }
 
 /* ==========================================================================
@@ -275,33 +459,67 @@ h1 {
 
 /* Mobile (up to 767px) */
 @media (max-width: 767px) {
-  .navbar {
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 0;
-    margin: 0 -15px;
-    width: calc(100% + 30px);
+  .navbar-brand {
+    padding-left: 0.5rem !important;
+    font-size: 0.85rem;
+    gap: 6px;
   }
 
-  .footer {
-    padding-left: 10px;
+  .btn-terminal-container {
+    margin-bottom: 1.5rem; /* Space between transition button and content on mobile */
+  }
+
+  .social-btn, .btn-twitch {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .navbar .container-fluid {
+    flex-wrap: wrap !important;
+    padding-left: 10px; /* Slight increase for safety */
     padding-right: 10px;
-    margin: 0 -15px;
-    width: calc(100% + 30px);
+  }
+
+  .navbar-nav {
+    margin-top: 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 94, 26, 0.2);
+    padding-top: 1rem;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    padding-left: 0 !important;
+    font-size: 0.75rem; /* Shrunk slightly more */
+    gap: 4px;
+  }
+
+  .navbar-toggler {
+    padding: 2px 4px;
+    font-size: 0.8rem;
+  }
+
+  .navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-btn, .btn-twitch {
+    width: 36px; /* Slightly smaller for tight mobile views */
+    height: 36px;
+    padding: 6px;
   }
 
   .scaffold-bg {
     background-size: cover;
-    max-height: 100vh;
-    overflow-y: auto;
+    min-height: 100vh;
   }
 
   .content-container {
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
-    max-height: 100vh;
-    overflow-y: auto;
   }
 
   .container.marketing {
