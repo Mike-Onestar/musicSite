@@ -23,7 +23,7 @@ function App() {
           {/* Each Route is like saying "if someone goes to /, show them Home" */}
           {/* EX: <Route path="/contact" element={<Contact />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/music" element={<Music />} /> {/* Add this line */}
+          <Route path="/music" element={<Music />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>

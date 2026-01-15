@@ -1,4 +1,4 @@
-//barell Exports
+// Barrel Exports
 
 // Pages
 export { default as Home } from "./pages/Home";

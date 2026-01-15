@@ -136,7 +136,6 @@ h1 {
   font-size: 0.75rem;
   padding-top: 0.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--bs-secondary-color);
   color: #ff5e1a !important;
 }
 
@@ -303,9 +302,6 @@ h1 {
 
   .container.marketing {
     padding-bottom: 2rem;
-  }
-
-  .hero-banner {
   }
 }
 

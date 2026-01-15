@@ -1,9 +1,6 @@
 import React from "react";
 
 const SpotifyAlbumAPI = ({ albumId }) => {
-  // Add some console.log statements to help us debug
-  console.log("Album ID received:", albumId);
-
   if (typeof albumId !== "string" || albumId.trim() === "") {
     return (
       <div className="alert alert-warning">Please provide a valid album ID</div>

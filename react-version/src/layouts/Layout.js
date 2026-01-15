@@ -8,10 +8,7 @@ const Layout = ({ children }) => {
           <source src="/images/static_bgloop.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="content-container d-flex flex-column min-vh-100 position-relative">
-        {/* Content */}
-        <div className="flex-grow-1">{children}</div>
-      </div>
+      <div className="content-container">{children}</div>
     </div>
   );
 };

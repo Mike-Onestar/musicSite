@@ -10,6 +10,8 @@ const Navbar = () => {
           <img src="/images/slojeEmote.webp" alt="brand icon" height="45" />
           Sloje
         </Link>
+
+        <SocialLinks />
         <button
           className="navbar-toggler"
           type="button"
@@ -29,7 +31,6 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            <SocialLinks />
           </ul>
         </div>
       </div>
